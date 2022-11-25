@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Signin</title>
+    <style src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"></style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script> 
+    <link rel="stylesheet" href="/files/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>    
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .hero{
+        height: 100%;
+        width: 100%;
+        background-image: url('../image/dress.jpg');
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+      }
+      .form-box{
+        width: 380px;
+        height: 480px;
+        position: relative;
+        margin: 6% auto;
+        background-color: #fff;
+        padding: 5px;
+        overflow: hidden;
+      }
+      .button-box{
+        width: 220px;
+        position: relative;
+        margin: 35px auto;
+        box-shadow: 0 0 20px 9px #ff61241f;
+        border-radius: 30px;
+      }
+      .toggle-btn{
+        cursor: pointer;
+        padding: 10px 30px;
+        background: transparent;
+        border: 0;
+        outline: none;
+        position: relative;
+      }
+      #btn{
+        top: 0;
+        left: 0;
+        position: absolute;
+        height: 100%;
+        width: 110px;
+        background: linear-gradient(to right,#ff105f,#ffad06);
+        border-radius: 30px;
+        transition: 0.5s;
+      }
+      .social-icons{
+        margin: 30px auto;
+        text-align: center;
+      }
+      .social-icons img{
+        width: 30px;
+        margin: 0 12px;
+        box-shadow: 0 0 20px 0 #7f7f7f3d;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+      .input-group{
+        top: 180px;
+        position: absolute;
+        width: 280px;
+        transition: 0.5s;
+      }
+      .input-feild{
+        width: 100%;
+        padding: 10px 0;
+        margin: 5px 0;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        border-bottom: 1px solid #999;
+        outline: none;
+        background: transparent;
+      }
+      .submit-btn{
+        width: 85%;
+        padding: 10px 30px;
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        background: linear-gradient(to right,#ff105f,#ffad06);
+        border: 0;
+        outline: none;
+        border-radius: 30px;
+      }
+      .check-box{
+        margin: 30px 10px 30px 0;
+      }
+      span{
+        color: #777;
+        font-size: 12px;
+        bottom: 68px;
+        position: absolute;
+      }
+      #login{
+        left: 50px;
+      }
+      #register{
+        left: 450px;
+      }
+    </style>
+  </head>
+<body>
+    <section id="header">
+        <a href="#"><img src="/image/logo.jpg " class="logo" alt="404" height="60px" width="60px"></a>
+        <div>
+            <ul id="navbar">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="/files/shop.html">Shop</a></li>
+    <li><a href="/files/blog.html">Blog</a></li>
+    <li><a href="/files/about.html">About</a></li>
+    <li><a href="/files/contact.html">Contact</a></li>
+    <li><a  class="active" href="/files/signin.html">Signin/Signup</a></li>
+    <li id="lg-bag"><a href="/files/cart.html"><i class="bi bi-cart4" ></i></a></li>
+    <a href="#" id="close"><i class="bi bi-box-arrow-right"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="/files/cart.html"><i class="bi bi-cart4" ></i></a>
+            <i id="bar" class="bi bi-list"></i>
+        </div>
+    </section>
+<div class="hero">
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Signin</button>
+            <button type="button" class="toggle-btn" onclick="register()">Signup</button>
+        </div>
+        
+    <div class="social-icons">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="">
+        <img src="https://static.vecteezy.com/system/resources/previews/002/534/045/original/social-media-twitter-logo-blue-isolated-free-vector.jpg" alt="">
+        <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-logos-vector-eps-cdr-svg-download-10.png" alt="">
+    </div>
+
+    <form class="input-group" id="login">
+        <input type="email" class="input-feild" id="email_id_sign_in" placeholder="Email Id" required>
+        <input type="text" class="input-feild" id="pass_sign_up" placeholder="Enter Password" required>
+        <input type="checkbox" class="check-box"><span>Remember Password</span>
+        <button type="submit" class="submit-btn" id="signin">Log in</button>
+    </form>
+    <form class="input-group" id="register">
+        <input type="text" class="input-feild" id="user_id_sign_up" placeholder="User Name" required>
+        <input type="email" class="input-feild" id="email_id_sign_up" placeholder="Email Id" required>
+        <input type="text" class="input-feild" id="pass_sign_up" placeholder="Enter Password" required>
+        <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+        <button type="submit" class="submit-btn" id="signup">Register</button>
+    </form>
+
+    </div>
+</div>
+<script>
+    var x=document.getElementById("login");
+    var y=document.getElementById("register");
+    var z=document.getElementById("btn");
+    function register(){
+        x.style.left="-400px";
+        y.style.left="50px";
+        z.style.left="110px";      
+    }
+    function login(){
+        x.style.left="50px";
+        y.style.left="450px";
+        z.style.left="0px";      
+    }
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import {initializeApp} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  import {getDatabase,set,ref,update} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+  import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged,signout} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAVsDelQ4JTe2SeNMbw1y2YoECyQsNnte0",
+    authDomain: "estore-c3bd4.firebaseapp.com",
+    databaseURL: "https://estore-c3bd4-default-rtdb.firebaseio.com",
+    projectId: "estore-c3bd4",
+    storageBucket: "estore-c3bd4.appspot.com",
+    messagingSenderId: "553764446956",
+    appId: "1:553764446956:web:c7b2280024f1ce5d2d3bc9"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database=getDatabase(app);
+  const auth = getAuth();
+signup.addEventListener('click',(e)=>{
+
+var username=document.getElementById('user_id_sign_up').value;
+var email=document.getElementById('email_id_sign_up').value;
+var password=document.getElementById('pass_sign_up').value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    set(ref(database,'user/'+user.uid),{
+    username:username,
+    email:email,
+    })
+    alert('user created');
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+    // ..
+  });
+})
+signin.addEventListener('click' ,(e) =>{
+  var email=document.getElementById('email_id_sign_in').value;
+  var password=document.getElementById('pass_sign_in').value;
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    const dt = new Date();
+    update(ref(database,'user/'+user.uid),{
+    last_login:dt,
+    })
+    alert('user logged in');
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+  })
+})
+const user = auth.currentUser;
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
+logout.addEventListener('click' ,(e) =>{
+  signOut(auth).then(()=>{
+    //signout succesfull
+    alert('Signed Out');
+  }).catch((error)=>{
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+    //an error happenend
+  })
+});
+</script>
+<script src="./script.js"></script>
+</body>
+</html>
